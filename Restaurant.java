@@ -15,17 +15,6 @@ public class Restaurant {
 		this.note=note;
 		spéc=spécialité;
 	}
-	public boolean equals(Object rest) {
-		if (rest instanceof Restaurant) {
-			Restaurant resto=(Restaurant)rest;
-			if (latitude==resto.latitude && longitude==resto.longitude)
-				return true;
-			else
-				return false;
-		} else {
-			return false;
-		}
-	}
 	
 
 }
