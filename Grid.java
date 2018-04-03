@@ -34,8 +34,29 @@ public class Grid {
 	}
 	public ArrayList<Restaurant> listof(Client client,double distance) {
 		ArrayList<Restaurant> result=new ArrayList<Restaurant>();
-		List<Restaurant> relevant=this.boxes.get((int) ((90+Math.floor(client.latitude))*360 + 180 + Math.floor(client.longitude))).liste;
-		for (Restaurant r: relevant) {
+		List<Restaurant> relevant1=this.boxes.get((int) ((90+Math.floor(client.latitude))*360 + 180 + Math.floor(client.longitude))).liste;
+		List<Restaurant> relevant2=this.boxes.get((int) ((90+Math.floor(client.latitude)+1)*360 + 180 + Math.floor(client.longitude))).liste;
+		List<Restaurant> relevant3=this.boxes.get((int) ((90+Math.floor(client.latitude)-1)*360 + 180 + Math.floor(client.longitude))).liste;
+		List<Restaurant> relevant4=this.boxes.get((int) ((90+Math.floor(client.latitude))*360 + 180 + Math.floor(client.longitude)+1)).liste;
+		List<Restaurant> relevant5=this.boxes.get((int) ((90+Math.floor(client.latitude))*360 + 180 + Math.floor(client.longitude)-1)).liste;
+		List<Restaurant> relevant6=this.boxes.get((int) ((90+Math.floor(client.latitude)-1)*360 + 180 + Math.floor(client.longitude)-1)).liste;
+		List<Restaurant> relevant7=this.boxes.get((int) ((90+Math.floor(client.latitude)-1)*360 + 180 + Math.floor(client.longitude)+1)).liste;
+		List<Restaurant> relevant8=this.boxes.get((int) ((90+Math.floor(client.latitude)-1)*360 + 180 + Math.floor(client.longitude)+1)).liste;
+		List<Restaurant> relevant9=this.boxes.get((int) ((90+Math.floor(client.latitude)+1)*360 + 180 + Math.floor(client.longitude)-1)).liste;
+		List<Restaurant> relevant10=this.boxes.get((int) ((90+Math.floor(client.latitude)+1)*360 + 180 + Math.floor(client.longitude)+1)).liste;
+		List<Restaurant> finale=new ArrayList<Restaurant>();
+		finale.addAll(relevant1);
+		finale.addAll(relevant2);
+		finale.addAll(relevant3);
+		finale.addAll(relevant3);
+		finale.addAll(relevant4);
+		finale.addAll(relevant5);
+		finale.addAll(relevant6);
+		finale.addAll(relevant7);
+		finale.addAll(relevant8);
+		finale.addAll(relevant9);
+		finale.addAll(relevant10);
+		for (Restaurant r: finale) {
 			if (Locate.distance(client,r)<distance) {
 				result.add(r);			
 			}
