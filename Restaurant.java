@@ -7,14 +7,11 @@ public class Restaurant {
 	public double longitude;
 	double note;
 	public Spécialité spéc;
-	public Restaurant(String nom,String adresse,double latitude,double longitude,double note,Spécialité spécialité) {
-		this.nom=nom;
-		this.adresse=adresse;
+	public Restaurant(double latitude,double longitude) {
 		this.latitude=latitude;
 		this.longitude=longitude;
-		this.note=note;
-		spéc=spécialité;
 	}
-	
-
+	public String toString() {
+		return "("+this.latitude+","+this.longitude+")";
+	}
 }
