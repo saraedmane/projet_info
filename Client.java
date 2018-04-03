@@ -5,10 +5,8 @@ public class Client {
 	public double latitude;
 	public Spécialité spécialité;
 	public double distance;
-	public Client(double longitude,double latitude,Spécialité spécialité,double distance) {
+	public Client(double latitude,double longitude) {
 		this.longitude=longitude;
-		this.latitude=latitude;
-		this.spécialité=spécialité;
-		this.distance=distance;		
+		this.latitude=latitude;	
 	}
 }
