@@ -11,17 +11,8 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-		Client yazid= new Client(33.484761, -112.078004);
-		Grid earth= new Grid();
-		Database data=new Database();
-		ArrayList<Restaurant> restaurants=data.createDB(new File("business.json"));
-		earth.makeBoxes();
-		for (Restaurant r: restaurants) {
-			earth.addRestaurant(r);
-		}	
-		for (Restaurant r: earth.listof(yazid, 1)) {
-			System.out.println(r);
-		}
+		Client yazid= new Client(33.506191, -112.086337);
+		Find.FindServices("business.json",yazid,0.5,"");
 	}
 
 }
