@@ -1,4 +1,25 @@
-public static void testDistance() {
+public static void testMakeBoxes() {
+		Grid earth=new Grid();
+		earth.makeBoxes();
+		Assert.assertEquals(360*180, earth.boxes.size());	
+	}
+	public static void testAddRestau() {
+		Restaurant resto=new Restaurant(48.12311,2.12131);
+		Grid earth= new Grid();
+		earth.makeBoxes();
+		earth.addRestaurant(resto);
+		Assert.assertEquals(false, earth.boxes.get((90+48)*360 + 180 + 2).liste.isEmpty());
+	}
+	public static void testLowerCase() {
+		ArrayList<String> input=new ArrayList<String>();
+		input.add("ChieNN");
+		input.add("ChIot");
+		ArrayList<String> expected=new ArrayList<String>();
+		expected.add("chienn");
+		expected.add("chiot");
+		Assert.assertEquals(expected,Find.Lowercase(input));
+	}
+	public static void testDistance() {
 		Client client=new Client(0,180);
 		Restaurant resto=new Restaurant(0,0);
 		double d=6378 * (Math.PI/2 - Math.asin(Math.sin(Math.PI*client.latitude/180) * Math.sin(Math.PI*resto.latitude/180) + Math.cos(Math.PI*client.longitude/180 - Math.PI*resto.longitude/180) * Math.cos(Math.PI*client.latitude/180) * Math.cos(Math.PI*resto.latitude)));
@@ -6,3 +27,5 @@ public static void testDistance() {
 		Assert.assertEquals(6378*Math.PI, d);
 		
 	}
+	
+	
